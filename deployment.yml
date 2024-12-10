@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: java-spring-boot  
-        image: tushargayakwad/java-images:latest
-        imagePullPolicy: Always
+        image: java-app:latest
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
 ---
