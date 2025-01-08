@@ -29,12 +29,13 @@ jobs:
         run: |
           docker build -t java-app:latest .
 
-      - name: Start Minikube
-        run: |
-          minikube start
+      # - name: Start Minikube
+      #   run: |
+      #     minikube start
 
       - name: Set Kubeconfig for Minikube
         run: |
+          minikube start
           export KUBEVERSION=$(minikube kubectl -- get --raw /version)
           alias kubectl="minikube kubectl --"
           kubectl version
