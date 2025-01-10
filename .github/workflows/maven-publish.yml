@@ -17,11 +17,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          # ssh-keyscan -H your.local.machine.com >> ~/.ssh/known_hosts
+          # ssh-keyscan -H 192.168.1.38 >> ~/.ssh/known_hosts
 
       - name: SSH into local machine and run command
         run: |
-          ssh -i ~/.ssh/id_rsa user@your.local.machine.com "Echo "Hi""
+          ssh -i ~/.ssh/id_rsa pulse30@192.168.1.38 "Echo "Hi""
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
