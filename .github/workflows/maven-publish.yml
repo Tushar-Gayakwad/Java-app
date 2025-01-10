@@ -21,7 +21,7 @@ jobs:
 
       - name: SSH into local machine and run command
         run: |
-          ssh -i ~/.ssh/id_rsa pulse30@192.168.1.38 "Echo "Hi""
+          ssh -i ~/.ssh/id_rsa pulse30@192.168.1.37 "echo Hi"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
